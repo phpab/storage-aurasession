@@ -97,8 +97,8 @@ If you discover any security related issues, please email phpab.phpab@gmail.com 
 
 ## Credits
 
-- [Mariano F.co Benítez Mulet][pachicodev@gmail.com]
-- [All Contributors][link-contributors]
+- [Mariano F.co Benítez Mulet](pachicodev@gmail.com)
+- [All Contributors][https://github.com/phpab/storage-aurasession/graphs/contributors]
 
 ## License
 
