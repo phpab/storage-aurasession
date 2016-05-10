@@ -1,0 +1,51 @@
+{
+    "name": "phpab/storage-aurasession",
+    "description": "Store session using Aura libraries.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/phpab/storage-aurasession",
+    "authors": [
+        {
+            "name": "Walter Tamboer",
+            "email": "walter@tamboer.nl",
+            "homepage": "https://github.com/waltertamboer",
+            "role": "Developer"
+        },
+        {
+            "name": "Patrick Heller",
+            "email": "paddy.heller@gmail.com",
+            "homepage": "https://github.com/psren",
+            "role": "Developer"
+        },
+        {
+            "name": "Mariano F.co Benítez Mulet",
+            "email": "pachicodev@gmail.com",
+            "homepage": "https://github.com/pachico",
+            "role": "Developer"
+        }
+
+    ],
+    "require": {
+        "php": "~5.5|~7.0",
+        "phpab/phpab": "dev-WiP/StorageAdapters",
+        "aura/session": "2.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpAb\\Storage\\Adapter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpAb\\Storage\\Adapter\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --stderr"
+    },
+    "require-dev": {
+        "scrutinizer/ocular": "^1.3",
+        "phpunit/phpunit": "4.*",
+        "squizlabs/php_codesniffer": "^2.5"
+    }
+}
