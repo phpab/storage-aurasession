@@ -17,7 +17,7 @@ use PhpAb\Event\Dispatcher;
 use PhpAb\Participation\Filter\Percentage;
 use PhpAb\Variant\Chooser\RandomChooser;
 use PhpAb\Engine\Engine;
-use PhpAb\Test\Test;
+use PhpAb\Test;
 use PhpAb\Variant\SimpleVariant;
 use PhpAb\Analytics\Renderer\Google\GoogleUniversalAnalytics;
 
@@ -45,13 +45,13 @@ $chooser = new RandomChooser();
 $engine = new Engine($manager, $dispatcher, $filter, $chooser);
 
 // Create a tests and its variants
-$test = new Test('foo_test', [], [Google::EXPERIMENT_ID => 'exp1']);
+$test = new Test\Test('foo_test', [], [Google::EXPERIMENT_ID => 'exp1']);
 $test->addVariant(new SimpleVariant('_control'));
 $test->addVariant(new SimpleVariant('_variant1'));
 $test->addVariant(new SimpleVariant('_variant2'));
 
 // Create a second test and its variants
-$test2 = new Test('bar_test', [], [Google::EXPERIMENT_ID => 'exp2']);
+$test2 = new Test\Test('bar_test', [], [Google::EXPERIMENT_ID => 'exp2']);
 $test2->addVariant(new SimpleVariant('_control'));
 $test2->addVariant(new SimpleVariant('_variant1'));
 $test2->addVariant(new SimpleVariant('_variant2'));
@@ -60,13 +60,6 @@ $test2->addVariant(new SimpleVariant('_variant2'));
 $engine->addTest($test);
 $engine->addTest($test2);
 
-// Pseudo: if($user->isAdmin)
-// If the user is admin, he should not participate at the test
-// $manager->participate('foo_test', null);
-// Pseudo: if($app->inDevelopment() and $GET['phpab']['foo_test])
-// $manager->participate('foo_test', $GET['phpab']['foo_test]);
-// Start testing. Must occur before the EventCycle of the app starts
-// Start the engine
 $engine->start();
 
 // Create the Analytics object and pass the Data Collector data to it

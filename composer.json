@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": "~5.5|~7.0",
-        "phpab/phpab": "dev-WiP/StorageAdapters",
+        "phpab/phpab": "dev-master",
         "aura/session": "2.0.1"
     },
     "autoload": {

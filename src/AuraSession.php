@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of phpab/phpab. (https://github.com/phpab/phpab)
  *
@@ -61,9 +60,8 @@ class AuraSession implements AdapterInterface
 
         $this->segment = $session->getSegment($this->segmentName);
 
-        $this->data = is_null(
-                $this->segment->get(static::KEY)) ? [] : $this->segment->get(static::KEY
-        );
+        $this->data = is_null($this->segment->get(static::KEY))
+            ? [] : $this->segment->get(static::KEY);
     }
 
     /**
